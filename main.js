@@ -2,11 +2,7 @@
 // │ Your code here! │	
 // └─────────────────┘
 function isAdmin(obj) {
-    if (obj['userRole'] === "ADMIN") {
-        return true;
-    } else {
-        return false;
-    }
+    return obj.userRole === "ADMIN"
 }
 
 function getEmail(obj) {
