@@ -10,14 +10,13 @@ function getEmail(obj) {
 }
 
 function getPlaylistLength(obj) {
-    return obj['songs'].length;
+    return obj.songs.length;
 }
 
 function getHardestHomework(obj) {
     if (obj.length === 0) {
         return "";
     }
-
     let homework = obj[0].name;
     let scoreAvg = obj[0].averageScore;
     for (let i = 0; i < obj.length; i++) {
