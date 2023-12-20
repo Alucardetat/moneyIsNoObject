@@ -13,21 +13,40 @@ function getPlaylistLength(obj) {
     return obj.songs.length;
 }
 
-function getHardestHomework(obj) {
-    if (obj.length === 0) {
-        return "";
+function getHardestHomework(arrOfHomework) {
+    if (arrOfHomework.length === 0) {
+        return ''
     }
-    let homework = obj[0].name;
-    let scoreAvg = obj[0].averageScore;
-    for (let i = 0; i < obj.length; i++) {
-        let complete = obj[i];
-        complete.averageScore;
-        if (complete.averageScore < scoreAvg) {
-            homework = complete.name;
-            scoreAvg = complete.averageScore;
+    // lowest score tracker
+    let lowestScore = arrOfHomework[0].averageScore
+    let lowestName = arrOfHomework[0].name
+    // loop through array
+    for (let assignmentObj of arrOfHomework) {
+        if (assignmentObj.averageScore < LowestScore) {
+            lowestScore = assignmentObj.averageScore // saves
+            lowestName = assignmentObj.name
         }
-    } return homework;
+    // if an index is less than current lowest, save it
+    } return lowestName
+    // return current lowest
 }
+    
+            
+// function getHardestHomework(obj) {
+//     if (obj.length === 0) {
+//         return "";
+//     }
+//     let homework = obj[0].name;
+//     let scoreAvg = obj[0].averageScore;
+//     for (let i = 0; i < obj.length; i++) {
+//         let complete = obj[i];
+//         complete.averageScore;
+//         if (complete.averageScore < scoreAvg) {
+//             homework = complete.name;
+//             scoreAvg = complete.averageScore;
+//         }
+//     } return homework;
+// }
 
 function createPhonebook(name, number) {
     let phonebook = {}
